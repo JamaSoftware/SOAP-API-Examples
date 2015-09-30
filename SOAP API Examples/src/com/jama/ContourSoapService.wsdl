@@ -1,0 +1,1088 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions name="ContourSoapServiceV3" targetNamespace="http://v3.ws.contour.jamasoftware.com" xmlns:ns1="http://v3.ws.contour.jamasoftware.com/" xmlns:ns2="http://cxf.apache.org/bindings/xformat" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://v3.ws.contour.jamasoftware.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:import location="http://localhost:8080/contour/ws/v3/soap/ContourSoapService?wsdl=ContourSoapService.wsdl" namespace="http://v3.ws.contour.jamasoftware.com/"/>
+  <wsdl:binding name="ContourSoapServiceV3SoapBinding" type="ns1:ContourSoapService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="updateOrganization">
+      <soap:operation soapAction="updateOrganization" style="document"/>
+      <wsdl:input name="updateOrganization">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateOrganizationResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="signBaseline">
+      <soap:operation soapAction="signBaseline" style="document"/>
+      <wsdl:input name="signBaseline">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="signBaselineResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteProject">
+      <soap:operation soapAction="deleteProject" style="document"/>
+      <wsdl:input name="deleteProject">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteProjectResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getServerInfo">
+      <soap:operation soapAction="getServerInfo" style="document"/>
+      <wsdl:input name="getServerInfo">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getServerInfoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteAttachment">
+      <soap:operation soapAction="deleteAttachment" style="document"/>
+      <wsdl:input name="deleteAttachment">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteAttachmentResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createBaselineFromFilter">
+      <soap:operation soapAction="createBaselineFromFilter" style="document"/>
+      <wsdl:input name="createBaselineFromFilter">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createBaselineFromFilterResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFiltersForProject">
+      <soap:operation soapAction="getFiltersForProject" style="document"/>
+      <wsdl:input name="getFiltersForProject">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getFiltersForProjectResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getExecutableTestRun">
+      <soap:operation soapAction="getExecutableTestRun" style="document"/>
+      <wsdl:input name="getExecutableTestRun">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getExecutableTestRunResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTestPlanGroups">
+      <soap:operation soapAction="getTestPlanGroups" style="document"/>
+      <wsdl:input name="getTestPlanGroups">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTestPlanGroupsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addLookup">
+      <soap:operation soapAction="addLookup" style="document"/>
+      <wsdl:input name="addLookup">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addLookupResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getChangeRequestAssociation">
+      <soap:operation soapAction="getChangeRequestAssociation" style="document"/>
+      <wsdl:input name="getChangeRequestAssociation">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getChangeRequestAssociationResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAttachments">
+      <soap:operation soapAction="getAttachments" style="document"/>
+      <wsdl:input name="getAttachments">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAttachmentsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addAttachmentToItem">
+      <soap:operation soapAction="addAttachmentToItem" style="document"/>
+      <wsdl:input name="addAttachmentToItem">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addAttachmentToItemResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUpstreamRelationships">
+      <soap:operation soapAction="getUpstreamRelationships" style="document"/>
+      <wsdl:input name="getUpstreamRelationships">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getUpstreamRelationshipsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUsers">
+      <soap:operation soapAction="getUsers" style="document"/>
+      <wsdl:input name="getUsers">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getUsersResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNumItemsFromFilter">
+      <soap:operation soapAction="getNumItemsFromFilter" style="document"/>
+      <wsdl:input name="getNumItemsFromFilter">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getNumItemsFromFilterResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDocumentTypeFields">
+      <soap:operation soapAction="getDocumentTypeFields" style="document"/>
+      <wsdl:input name="getDocumentTypeFields">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getDocumentTypeFieldsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteRelationship">
+      <soap:operation soapAction="deleteRelationship" style="document"/>
+      <wsdl:input name="deleteRelationship">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteRelationshipResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="revokeSignatureFromBaseline">
+      <soap:operation soapAction="revokeSignatureFromBaseline" style="document"/>
+      <wsdl:input name="revokeSignatureFromBaseline">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="revokeSignatureFromBaselineResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addItem">
+      <soap:operation soapAction="addItem" style="document"/>
+      <wsdl:input name="addItem">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addItemResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAvailableWorkflowTransitions">
+      <soap:operation soapAction="getAvailableWorkflowTransitions" style="document"/>
+      <wsdl:input name="getAvailableWorkflowTransitions">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAvailableWorkflowTransitionsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addOrganization">
+      <soap:operation soapAction="addOrganization" style="document"/>
+      <wsdl:input name="addOrganization">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addOrganizationResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteOrganization">
+      <soap:operation soapAction="deleteOrganization" style="document"/>
+      <wsdl:input name="deleteOrganization">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteOrganizationResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addPropertyEntry">
+      <soap:operation soapAction="addPropertyEntry" style="document"/>
+      <wsdl:input name="addPropertyEntry">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addPropertyEntryResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deactivateItem">
+      <soap:operation soapAction="deactivateItem" style="document"/>
+      <wsdl:input name="deactivateItem">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deactivateItemResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeAttachmentFromItem">
+      <soap:operation soapAction="removeAttachmentFromItem" style="document"/>
+      <wsdl:input name="removeAttachmentFromItem">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="removeAttachmentFromItemResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addItems">
+      <soap:operation soapAction="addItems" style="document"/>
+      <wsdl:input name="addItems">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addItemsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getActivities">
+      <soap:operation soapAction="getActivities" style="document"/>
+      <wsdl:input name="getActivities">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getActivitiesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSubscribersToAnItem">
+      <soap:operation soapAction="getSubscribersToAnItem" style="document"/>
+      <wsdl:input name="getSubscribersToAnItem">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getSubscribersToAnItemResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateComment">
+      <soap:operation soapAction="updateComment" style="document"/>
+      <wsdl:input name="updateComment">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateCommentResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getItemsFromTextSearch">
+      <soap:operation soapAction="getItemsFromTextSearch" style="document"/>
+      <wsdl:input name="getItemsFromTextSearch">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getItemsFromTextSearchResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRelease">
+      <soap:operation soapAction="getRelease" style="document"/>
+      <wsdl:input name="getRelease">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getReleaseResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOrganizations">
+      <soap:operation soapAction="getOrganizations" style="document"/>
+      <wsdl:input name="getOrganizations">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getOrganizationsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAttachmentsForItem">
+      <soap:operation soapAction="getAttachmentsForItem" style="document"/>
+      <wsdl:input name="getAttachmentsForItem">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAttachmentsForItemResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getItem">
+      <soap:operation soapAction="getItem" style="document"/>
+      <wsdl:input name="getItem">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getItemResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVersionsForItem">
+      <soap:operation soapAction="getVersionsForItem" style="document"/>
+      <wsdl:input name="getVersionsForItem">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getVersionsForItemResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBaseline">
+      <soap:operation soapAction="getBaseline" style="document"/>
+      <wsdl:input name="getBaseline">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getBaselineResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getChangeRequestAssociations">
+      <soap:operation soapAction="getChangeRequestAssociations" style="document"/>
+      <wsdl:input name="getChangeRequestAssociations">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getChangeRequestAssociationsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProjects">
+      <soap:operation soapAction="getProjects" style="document"/>
+      <wsdl:input name="getProjects">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getProjectsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deactivateProject">
+      <soap:operation soapAction="deactivateProject" style="document"/>
+      <wsdl:input name="deactivateProject">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deactivateProjectResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateItems">
+      <soap:operation soapAction="updateItems" style="document"/>
+      <wsdl:input name="updateItems">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateItemsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addPropertyList">
+      <soap:operation soapAction="addPropertyList" style="document"/>
+      <wsdl:input name="addPropertyList">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addPropertyListResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updatePropertyEntry">
+      <soap:operation soapAction="updatePropertyEntry" style="document"/>
+      <wsdl:input name="updatePropertyEntry">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updatePropertyEntryResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPropertyEntry">
+      <soap:operation soapAction="getPropertyEntry" style="document"/>
+      <wsdl:input name="getPropertyEntry">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getPropertyEntryResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isValidDocumentPlacement">
+      <soap:operation soapAction="isValidDocumentPlacement" style="document"/>
+      <wsdl:input name="isValidDocumentPlacement">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="isValidDocumentPlacementResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRelationshipsForProject">
+      <soap:operation soapAction="getRelationshipsForProject" style="document"/>
+      <wsdl:input name="getRelationshipsForProject">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getRelationshipsForProjectResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addComment">
+      <soap:operation soapAction="addComment" style="document"/>
+      <wsdl:input name="addComment">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addCommentResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateLookup">
+      <soap:operation soapAction="updateLookup" style="document"/>
+      <wsdl:input name="updateLookup">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateLookupResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBaselinesForProject">
+      <soap:operation soapAction="getBaselinesForProject" style="document"/>
+      <wsdl:input name="getBaselinesForProject">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getBaselinesForProjectResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getItemFields">
+      <soap:operation soapAction="getItemFields" style="document"/>
+      <wsdl:input name="getItemFields">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getItemFieldsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAttachment">
+      <soap:operation soapAction="getAttachment" style="document"/>
+      <wsdl:input name="getAttachment">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAttachmentResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateChangeRequestAssociation">
+      <soap:operation soapAction="updateChangeRequestAssociation" style="document"/>
+      <wsdl:input name="updateChangeRequestAssociation">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateChangeRequestAssociationResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getItemsWithAttachment">
+      <soap:operation soapAction="getItemsWithAttachment" style="document"/>
+      <wsdl:input name="getItemsWithAttachment">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getItemsWithAttachmentResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addProject">
+      <soap:operation soapAction="addProject" style="document"/>
+      <wsdl:input name="addProject">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addProjectResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsException">
+        <soap:fault name="WsException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="clearSuspectLinksForItem">
+      <soap:operation soapAction="clearSuspectLinksForItem" style="document"/>
+      <wsdl:input name="clearSuspectLinksForItem">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="clearSuspectLinksForItemResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateRelationship">
+      <soap:operation soapAction="updateRelationship" style="document"/>
+      <wsdl:input name="updateRelationship">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateRelationshipResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOrganization">
+      <soap:operation soapAction="getOrganization" style="document"/>
+      <wsdl:input name="getOrganization">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getOrganizationResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUrlForAttachment">
+      <soap:operation soapAction="getUrlForAttachment" style="document"/>
+      <wsdl:input name="getUrlForAttachment">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getUrlForAttachmentResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPropertyList">
+      <soap:operation soapAction="getPropertyList" style="document"/>
+      <wsdl:input name="getPropertyList">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getPropertyListResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="testConnection">
+      <soap:operation soapAction="testConnection" style="document"/>
+      <wsdl:input name="testConnection">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="testConnectionResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserFromAuth">
+      <soap:operation soapAction="getUserFromAuth" style="document"/>
+      <wsdl:input name="getUserFromAuth">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getUserFromAuthResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateItemValues">
+      <soap:operation soapAction="updateItemValues" style="document"/>
+      <wsdl:input name="updateItemValues">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateItemValuesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clearSuspectLinksForProject">
+      <soap:operation soapAction="clearSuspectLinksForProject" style="document"/>
+      <wsdl:input name="clearSuspectLinksForProject">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="clearSuspectLinksForProjectResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateItem">
+      <soap:operation soapAction="updateItem" style="document"/>
+      <wsdl:input name="updateItem">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateItemResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVersion">
+      <soap:operation soapAction="getVersion" style="document"/>
+      <wsdl:input name="getVersion">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getVersionResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createRelationships">
+      <soap:operation soapAction="createRelationships" style="document"/>
+      <wsdl:input name="createRelationships">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createRelationshipsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deactivateBaseline">
+      <soap:operation soapAction="deactivateBaseline" style="document"/>
+      <wsdl:input name="deactivateBaseline">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deactivateBaselineResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLookupsFromType">
+      <soap:operation soapAction="getLookupsFromType" style="document"/>
+      <wsdl:input name="getLookupsFromType">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getLookupsFromTypeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addRelease">
+      <soap:operation soapAction="addRelease" style="document"/>
+      <wsdl:input name="addRelease">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addReleaseResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDocumentType">
+      <soap:operation soapAction="getDocumentType" style="document"/>
+      <wsdl:input name="getDocumentType">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getDocumentTypeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateUser">
+      <soap:operation soapAction="updateUser" style="document"/>
+      <wsdl:input name="updateUser">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateUserResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updatePropertyList">
+      <soap:operation soapAction="updatePropertyList" style="document"/>
+      <wsdl:input name="updatePropertyList">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updatePropertyListResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addChangeRequestAssociation">
+      <soap:operation soapAction="addChangeRequestAssociation" style="document"/>
+      <wsdl:input name="addChangeRequestAssociation">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addChangeRequestAssociationResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDocumentTypesForProject">
+      <soap:operation soapAction="getDocumentTypesForProject" style="document"/>
+      <wsdl:input name="getDocumentTypesForProject">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getDocumentTypesForProjectResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUrlForItem">
+      <soap:operation soapAction="getUrlForItem" style="document"/>
+      <wsdl:input name="getUrlForItem">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getUrlForItemResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isChangeRequest">
+      <soap:operation soapAction="isChangeRequest" style="document"/>
+      <wsdl:input name="isChangeRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="isChangeRequestResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteChangeRequestAssociation">
+      <soap:operation soapAction="deleteChangeRequestAssociation" style="document"/>
+      <wsdl:input name="deleteChangeRequestAssociation">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteChangeRequestAssociationResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deletePropertyList">
+      <soap:operation soapAction="deletePropertyList" style="document"/>
+      <wsdl:input name="deletePropertyList">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deletePropertyListResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getItemsForProjectAndDocumentType">
+      <soap:operation soapAction="getItemsForProjectAndDocumentType" style="document"/>
+      <wsdl:input name="getItemsForProjectAndDocumentType">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getItemsForProjectAndDocumentTypeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateRelease">
+      <soap:operation soapAction="updateRelease" style="document"/>
+      <wsdl:input name="updateRelease">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateReleaseResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getComment">
+      <soap:operation soapAction="getComment" style="document"/>
+      <wsdl:input name="getComment">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getCommentResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateProject">
+      <soap:operation soapAction="updateProject" style="document"/>
+      <wsdl:input name="updateProject">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateProjectResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="WsException">
+        <soap:fault name="WsException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="moveDocument">
+      <soap:operation soapAction="moveDocument" style="document"/>
+      <wsdl:input name="moveDocument">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="moveDocumentResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFilter">
+      <soap:operation soapAction="getFilter" style="document"/>
+      <wsdl:input name="getFilter">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getFilterResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deactivateUser">
+      <soap:operation soapAction="deactivateUser" style="document"/>
+      <wsdl:input name="deactivateUser">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deactivateUserResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getComments">
+      <soap:operation soapAction="getComments" style="document"/>
+      <wsdl:input name="getComments">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getCommentsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRelationshipsFromFilter">
+      <soap:operation soapAction="getRelationshipsFromFilter" style="document"/>
+      <wsdl:input name="getRelationshipsFromFilter">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getRelationshipsFromFilterResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDocumentTypes">
+      <soap:operation soapAction="getDocumentTypes" style="document"/>
+      <wsdl:input name="getDocumentTypes">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getDocumentTypesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUser">
+      <soap:operation soapAction="getUser" style="document"/>
+      <wsdl:input name="getUser">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getUserResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getItemsForProject">
+      <soap:operation soapAction="getItemsForProject" style="document"/>
+      <wsdl:input name="getItemsForProject">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getItemsForProjectResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRelationship">
+      <soap:operation soapAction="getRelationship" style="document"/>
+      <wsdl:input name="getRelationship">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getRelationshipResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLookupType">
+      <soap:operation soapAction="getLookupType" style="document"/>
+      <wsdl:input name="getLookupType">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getLookupTypeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateBaseline">
+      <soap:operation soapAction="updateBaseline" style="document"/>
+      <wsdl:input name="updateBaseline">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateBaselineResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createNewTestCycle">
+      <soap:operation soapAction="createNewTestCycle" style="document"/>
+      <wsdl:input name="createNewTestCycle">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createNewTestCycleResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getChildrenOfItem">
+      <soap:operation soapAction="getChildrenOfItem" style="document"/>
+      <wsdl:input name="getChildrenOfItem">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getChildrenOfItemResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDownstreamRelated">
+      <soap:operation soapAction="getDownstreamRelated" style="document"/>
+      <wsdl:input name="getDownstreamRelated">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getDownstreamRelatedResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteComment">
+      <soap:operation soapAction="deleteComment" style="document"/>
+      <wsdl:input name="deleteComment">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteCommentResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addUser">
+      <soap:operation soapAction="addUser" style="document"/>
+      <wsdl:input name="addUser">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addUserResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createBaseline">
+      <soap:operation soapAction="createBaseline" style="document"/>
+      <wsdl:input name="createBaseline">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createBaselineResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProject">
+      <soap:operation soapAction="getProject" style="document"/>
+      <wsdl:input name="getProject">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getProjectResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="closeChangeRequest">
+      <soap:operation soapAction="closeChangeRequest" style="document"/>
+      <wsdl:input name="closeChangeRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="closeChangeRequestResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="executeWorkflowTransition">
+      <soap:operation soapAction="executeWorkflowTransition" style="document"/>
+      <wsdl:input name="executeWorkflowTransition">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="executeWorkflowTransitionResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCurrentVersionForItem">
+      <soap:operation soapAction="getCurrentVersionForItem" style="document"/>
+      <wsdl:input name="getCurrentVersionForItem">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getCurrentVersionForItemResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getItemFieldNames">
+      <soap:operation soapAction="getItemFieldNames" style="document"/>
+      <wsdl:input name="getItemFieldNames">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getItemFieldNamesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deletePropertyEntry">
+      <soap:operation soapAction="deletePropertyEntry" style="document"/>
+      <wsdl:input name="deletePropertyEntry">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deletePropertyEntryResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="replyToComment">
+      <soap:operation soapAction="replyToComment" style="document"/>
+      <wsdl:input name="replyToComment">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="replyToCommentResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteRelease">
+      <soap:operation soapAction="deleteRelease" style="document"/>
+      <wsdl:input name="deleteRelease">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteReleaseResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deactivateLookup">
+      <soap:operation soapAction="deactivateLookup" style="document"/>
+      <wsdl:input name="deactivateLookup">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deactivateLookupResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getItemsForBaseline">
+      <soap:operation soapAction="getItemsForBaseline" style="document"/>
+      <wsdl:input name="getItemsForBaseline">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getItemsForBaselineResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getReleases">
+      <soap:operation soapAction="getReleases" style="document"/>
+      <wsdl:input name="getReleases">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getReleasesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUpstreamRelated">
+      <soap:operation soapAction="getUpstreamRelated" style="document"/>
+      <wsdl:input name="getUpstreamRelated">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getUpstreamRelatedResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPermissionsByRefAndScope">
+      <soap:operation soapAction="getPermissionsByRefAndScope" style="document"/>
+      <wsdl:input name="getPermissionsByRefAndScope">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getPermissionsByRefAndScopeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRelationshipTypeList">
+      <soap:operation soapAction="getRelationshipTypeList" style="document"/>
+      <wsdl:input name="getRelationshipTypeList">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getRelationshipTypeListResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="executeTestRun">
+      <soap:operation soapAction="executeTestRun" style="document"/>
+      <wsdl:input name="executeTestRun">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="executeTestRunResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLookup">
+      <soap:operation soapAction="getLookup" style="document"/>
+      <wsdl:input name="getLookup">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getLookupResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDownstreamRelationships">
+      <soap:operation soapAction="getDownstreamRelationships" style="document"/>
+      <wsdl:input name="getDownstreamRelationships">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getDownstreamRelationshipsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getItemsFromFilter">
+      <soap:operation soapAction="getItemsFromFilter" style="document"/>
+      <wsdl:input name="getItemsFromFilter">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getItemsFromFilterResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNumItemsFromTextSearch">
+      <soap:operation soapAction="getNumItemsFromTextSearch" style="document"/>
+      <wsdl:input name="getNumItemsFromTextSearch">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getNumItemsFromTextSearchResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addSubscribersToItem">
+      <soap:operation soapAction="addSubscribersToItem" style="document"/>
+      <wsdl:input name="addSubscribersToItem">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addSubscribersToItemResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ContourSoapServiceV3">
+    <wsdl:port binding="tns:ContourSoapServiceV3SoapBinding" name="ContourSoapServicePort">
+      <soap:address location="http://localhost:8080/contour/ws/v3/soap/ContourSoapService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
