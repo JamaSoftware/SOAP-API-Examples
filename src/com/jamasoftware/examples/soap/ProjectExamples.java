@@ -22,5 +22,34 @@ public class ProjectExamples {
                     project.getProjectKey()));
         }
     }
+
+
+    public static void getActivities(ContourSoapService service, WsAuth token) {
+        System.out.println("Jama API getActivities Example");
+        System.out.println("Get activities (comment stream) for a given project in Jama");
+        System.out.println("-------------------------------------------------------------------");
+
+        // Get last 50 activities from "Coverage Plus - Traditional"
+        List<WsActivity> activities = service.getActivities(token, (long)1, 0, 50);
+
+        WsItem modifiedItem;
+
+        String itemName;
+
+        for (WsActivity activity : activities) {
+            if (activity.getItem() != null) {               // An activity may not be on a specific item, so
+                itemName = activity.getItem().getName();    // handle null getItem() results.
+            } else {
+                itemName = "";
+            }
+            System.out.println(String.format("%s: %s %s - %s",
+                    activity.getDate(),
+                    activity.getAction(),
+                    itemName,
+                    activity.getComments()
+            ));
+        }
+
+    }
 }
 

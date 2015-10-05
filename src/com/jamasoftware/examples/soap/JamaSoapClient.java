@@ -40,7 +40,7 @@ public class JamaSoapClient {
 
         // Item handling examples
         ItemExamples ie = new ItemExamples();
-        ItemExamples.getItemExample(service, token);
+//        ItemExamples.getItemExample(service, token);
 //        ie.updateItemExample(service, token);
 //        ie.getItemsFromTextSearchExample(service, token);
 //        ie.addItemExample(service, token);
@@ -50,11 +50,12 @@ public class JamaSoapClient {
 
         // Project handling examples
         ProjectExamples pe = new ProjectExamples();
-        ProjectExamples.getProjectsExample(service, token);
+//        ProjectExamples.getProjectsExample(service, token);
+        ProjectExamples.getActivities(service, token);
 
         // User handling examples
         UserExamples ue = new UserExamples();
-        UserExamples.getUsersExample(service, token);
+//        UserExamples.getUsersExample(service, token);
 //        ue.addUserExample(service, token);
 //        ue.updateUserExample(service, token);
 //        ue.deactivateUserExample(service, token);
