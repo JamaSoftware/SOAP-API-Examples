@@ -37,7 +37,7 @@ public class ProjectExamples {
         String itemName;
 
         for (WsActivity activity : activities) {
-            if (activity.getItem() != null) {               // An activity may not be on a specific item, so
+            if (activity.getItem() != null) {               // An activity isn't necessarily on a specific item, so
                 itemName = activity.getItem().getName();    // handle null getItem() results.
             } else {
                 itemName = "";
