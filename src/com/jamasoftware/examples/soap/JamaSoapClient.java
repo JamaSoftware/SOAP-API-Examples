@@ -29,7 +29,7 @@ public class JamaSoapClient {
     private static ContourSoapService contourSoapService;
 
 
-    public static void main(String[] argv) {
+    public static void main(String[] argv) throws Exception {
         userName = "sample";                                                        // SOAP API Username
         password = "password";                                                      // SOAP API Password
         url = "http://localhost:8080/contour/ws/v3/soap/ContourSoapService?wsdl";   // SOAP API endpoint URL
@@ -51,7 +51,7 @@ public class JamaSoapClient {
         // Project handling examples
         ProjectExamples pe = new ProjectExamples();
 //        ProjectExamples.getProjectsExample(service, token);
-        ProjectExamples.getActivities(service, token);
+//        ProjectExamples.getActivities(service, token);
 
         // User handling examples
         UserExamples ue = new UserExamples();
@@ -59,6 +59,11 @@ public class JamaSoapClient {
 //        ue.addUserExample(service, token);
 //        ue.updateUserExample(service, token);
 //        ue.deactivateUserExample(service, token);
+
+        // Test handling examples
+        TestExamples te = new TestExamples();
+        te.createAndExecuteTestCycle(service, token);
+
     }
 
 
