@@ -10,6 +10,100 @@ import java.util.*;
 
 
 public class TestExamples {
+
+    public static void listTestCyclesExample(ContourSoapService service, WsAuth token) {
+        System.out.println("Jama API list test cycles example");
+        System.out.println("List test cycles");
+        System.out.println("-------------------------------------------------------------------");
+
+        int projectId = 1;
+
+        String searchString = String.format("+project.id:%s +entityType:testcycle", projectId);
+        int start = 0;
+        int count = 50;
+
+        int total = 0;
+        List<WsItem> searchResults;
+
+        while (true) {
+            System.out.println(String.format("Getting results %s - %s", start + 1, start + count));
+            searchResults = service.getItemsFromTextSearch(token, searchString, start, count);
+
+            for (WsItem item : searchResults) {
+                total += 1;
+                System.out.println(String.format("%5s: %s (API ID %s)", total, item.getName(), item.getId()));
+            }
+
+            if (searchResults.isEmpty() || searchResults.size() < count) {  // No more search results.
+                System.out.println(String.format("Finished. %s items found.", total));
+                break;
+            } else {
+                start += count;
+            }
+        }
+
+    }
+
+    public void getTestPlanGroupsExample(ContourSoapService service, WsAuth token) {
+        System.out.println("Jama API find test groups example");
+        System.out.println("List test groups in a given test cycle");
+        System.out.println("-------------------------------------------------------------------");
+
+        // Get groups in the given test plan. 265 is "CoveragePlus Release" in the project
+        // "Coverage Plus - Traditional".
+        int testPlanId = 265;
+        List<WsTestGroup> groups = service.getTestPlanGroups(token, testPlanId);
+
+        for (WsTestGroup group : groups) {
+            System.out.println(group.getName());
+            for (WsItemName testcase : group.getTestCases()) {
+                System.out.println(String.format("    %s (API ID: %s)", testcase.getName(), testcase.getId()));
+                // Because this is a WsItemName object instead of the full WsItem object, steps are not
+                // available without doing a separate getItem call for that test case. For example:
+                // WsItem fullTestCase = service.getItem(token, testcase.getId())
+            }
+        }
+    }
+
+
+    public static void findUnexecutedTestRunsExample(ContourSoapService service, WsAuth token) {
+        System.out.println("Jama API find test runs example");
+        System.out.println("Find test runs that have not been executed in a given test cycle");
+        System.out.println("-------------------------------------------------------------------");
+
+        int projectId = 1;
+        int testCycleId = 1607;
+
+        // Note: to find all unexecuted test runs in the project, remove "+testCycle.id:%s" from the search string.
+        // To find all passed test runs, change "+testRunStatus:not" to "+testRunStatus:passed"
+        String searchString = String.format("+project.id:%s +entityType:testrun +testRunStatus:not +testCycle.id:%s",
+                projectId, testCycleId);
+        int start = 0;
+        int count = 50;
+
+        int total = 0;
+        List<WsItem> searchResults;
+
+        while (true) {
+            System.out.println(String.format("Getting results %s - %s", start + 1, start + count));
+            searchResults = service.getItemsFromTextSearch(token, searchString, start, count);
+
+            for (WsItem item : searchResults) {
+                total += 1;
+                System.out.println(String.format("%5s: %s (API ID %s)",
+                                                 total, item.getName(), item.getId()));
+            }
+
+            if (searchResults.isEmpty() || searchResults.size() < count) {  // No more search results.
+                System.out.println(String.format("Finished. %s items found.", total));
+                break;
+            } else {
+                start += count;
+            }
+        }
+    }
+
+
     public void createAndExecuteTestCycle(ContourSoapService service, WsAuth token) throws Exception {
         System.out.println("Jama API execute test example");
         System.out.println("Execute tests in a test run");
@@ -61,6 +155,7 @@ public class TestExamples {
         }
     }
 
+
     /**
      * Helper to create a XMLGregorianCalendar object for a given date. An alternate way to do this would be
      * to change the web services client to use a "more friendly" object like Java.util.Date. Note that the
@@ -80,4 +175,5 @@ public class TestExamples {
         DatatypeFactory datatypeFactory = DatatypeFactory.newInstance();
         return datatypeFactory.newXMLGregorianCalendar(gregorianCalendar);
     }
+
 }
