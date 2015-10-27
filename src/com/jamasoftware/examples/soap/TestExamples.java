@@ -248,8 +248,8 @@ public class TestExamples {
                 System.out.println(String.format("  Action: %s", step.getAction()));
                 System.out.println(String.format("Expected: %s", step.getExpectedResult()));
                 step.setResult("Result of test");       // Result is the result of the test. For example,
-                // someone was able to log in, or an error message was
-                // displayed
+                                                        // someone was able to log in, or an error message was
+                                                        // displayed
                 step.setStatus(WsTestRunStatus.PASSED);
                 // or WsTestRunStatus.FAILED, or one of the other values in the WsTestRunStatus enum
             }
