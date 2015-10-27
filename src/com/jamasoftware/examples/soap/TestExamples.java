@@ -104,6 +104,110 @@ public class TestExamples {
     }
 
 
+    public void getTestCaseFieldFromTestRun(ContourSoapService service, WsAuth token) {
+        System.out.println("Jama API get test case information from test run example");
+        System.out.println("Find the priority of the test case for a given test run");
+        System.out.println("-------------------------------------------------------------------");
+
+        // This would work for any other custom field in the Test Case as well
+
+        WsExecutableTestRun executableTestRun = service.getExecutableTestRun(token, 270);
+        WsItem testRun = executableTestRun.getTestRun();    // If you already have the WsItem object for a test run,
+                                                            // start here
+
+        // Find the ID of the Test Case
+        Long testCaseId = null;
+        for (WsField field : testRun.getFields()) {       // Look for field with the test case ID
+            if (field.getName().equals("testCase")) {     // The API ids for fields are listed in Jama under
+                                                          // Admin > Item Types > [type]. You could also match on that
+                                                          // with field.getId() == 286
+                testCaseId = Long.parseLong(field.getValues().get(0));
+            }
+        }
+
+        // Get the Test Case's WsItem object
+        String priority = null;
+        WsItem testCase = null;
+
+        if (testCaseId != null) {
+            testCase = service.getItem(token, testCaseId);
+            for (WsField field : testCase.getFields()) {
+                if (field.getName().equals("priority")) {
+                    priority = field.getDisplays().get(0);    // getDisplays() returns an array. If the field contains a
+                                                              // single value, just get the first item in the array.
+                                                              // For other field types such as text fields or integers,
+                                                              // use getValues() instead.
+
+        /*
+        For a picklist, getValues() would return the ID of the value in the picklist. For more information see:
+        https://community.jamasoftware.com/jama/topics/soap-api-how-do-i-update-the-value-of-a-field-of-type-pick-list
+        */
+                }
+            }
+        }
+
+        if (testCase != null) {
+            System.out.println(String.format("The test run \"%s\" (API ID %s) is derived from the test case \"%s\" " +
+                                             "(API ID %s) that has a priority of \"%s\"",
+                    testRun.getName(), testRun.getId(), testCase.getName(), testCaseId, priority));
+        }
+
+    }
+
+
+
+
+    public static void findTestPlansForCountry(ContourSoapService service, WsAuth token) {
+        System.out.println("Jama API find test plans based on custom field example");
+        System.out.println("Find test plans for a given country. Assumes custom field named \"country\" exists");
+        System.out.println("-------------------------------------------------------------------");
+
+        /*
+         This example assumes that the item type "Test Plan" has the following custom field added to it:
+         Field Label: Country
+         Unique Field Name: country
+         Pick List: Country
+
+         The pick list named "Country" is defined with the values:
+         United States of America
+         Spain
+         Japan
+
+         Also, at least one test plan exists with a Country of "Spain".
+
+         This would also work with other field types.
+        */
+
+        int projectId = 1;
+        String country = "Spain";
+
+        String searchString = String.format("+project.id:%s +entityType:testplan +country:%s",
+                                            projectId, country);
+        int start = 0;
+        int count = 50;
+        int total = 0;
+        List<WsItem> searchResults;
+
+        while (true) {
+            System.out.println(String.format("Getting results %s - %s", start + 1, start + count));
+            searchResults = service.getItemsFromTextSearch(token, searchString, start, count);
+
+            for (WsItem item : searchResults) {
+                total += 1;
+                System.out.println(String.format("%5s: %s (API ID %s)",
+                        total, item.getName(), item.getId()));
+            }
+
+            if (searchResults.isEmpty() || searchResults.size() < count) {  // No more search results.
+                System.out.println(String.format("Finished. %s items found.", total));
+                break;
+            } else {
+                start += count;
+            }
+        }
+    }
+
+
     public void createAndExecuteTestCycle(ContourSoapService service, WsAuth token) throws Exception {
         System.out.println("Jama API execute test example");
         System.out.println("Execute tests in a test run");
@@ -158,8 +262,8 @@ public class TestExamples {
 
     /**
      * Helper to create a XMLGregorianCalendar object for a given date. An alternate way to do this would be
-     * to change the web services client to use a "more friendly" object like Java.util.Date. Note that the
-     * Jama server expects time in GMT.
+     * to change the web services client to use a "more friendly" object like Java.util.Date or Java.time.LocalDate.
+     * Note that the Jama server expects time in GMT.
      *
      * @param year Year
      * @param month Month 1-12
@@ -175,5 +279,4 @@ public class TestExamples {
         DatatypeFactory datatypeFactory = DatatypeFactory.newInstance();
         return datatypeFactory.newXMLGregorianCalendar(gregorianCalendar);
     }
-
 }

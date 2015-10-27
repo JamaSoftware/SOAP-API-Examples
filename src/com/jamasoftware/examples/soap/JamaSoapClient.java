@@ -62,9 +62,11 @@ public class JamaSoapClient {
 
         // Test handling examples
         TestExamples te = new TestExamples();
-        te.getTestPlanGroupsExample(service, token);
-        te.listTestCyclesExample(service, token);
-        te.findUnexecutedTestRunsExample(service, token);
+//        te.getTestPlanGroupsExample(service, token);
+//        te.listTestCyclesExample(service, token);
+//        te.findUnexecutedTestRunsExample(service, token);
+        te.getTestCaseFieldFromTestRun(service, token);
+//        te.findTestPlansForCountry(service, token);
 //        te.createAndExecuteTestCycle(service, token);
 
     }
