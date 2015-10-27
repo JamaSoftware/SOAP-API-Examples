@@ -41,8 +41,8 @@ public class TestExamples {
                 start += count;
             }
         }
-
     }
+
 
     public void getTestPlanGroupsExample(ContourSoapService service, WsAuth token) {
         System.out.println("Jama API find test groups example");
@@ -72,7 +72,7 @@ public class TestExamples {
         System.out.println("-------------------------------------------------------------------");
 
         int projectId = 1;
-        int testCycleId = 1607;
+        int testCycleId = 266;
 
         // Note: to find all unexecuted test runs in the project, remove "+testCycle.id:%s" from the search string.
         // To find all passed test runs, change "+testRunStatus:not" to "+testRunStatus:passed"
