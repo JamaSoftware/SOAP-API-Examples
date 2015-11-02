@@ -49,8 +49,7 @@ public class TestExamples {
         System.out.println("List all test cycles in a given test plan");
         System.out.println("-------------------------------------------------------------------");
 
-        // Get groups in the given test plan. 265 is "CoveragePlus Release" in the project
-        // "Coverage Plus - Traditional".
+        // 265 is the test plan "CoveragePlus Release" in the project "Coverage Plus - Traditional".
         long testPlanId = 265;
 
         String searchString = String.format("+entityType:testcycle +testPlan.id:%s", testPlanId);
