@@ -12,7 +12,7 @@ import java.util.*;
 public class TestExamples {
 
     public static void listTestCyclesExample(ContourSoapService service, WsAuth token) {
-        System.out.println("Jama API list test cycles example");
+        System.out.println("Jama API list test cycles in a project example");
         System.out.println("List test cycles");
         System.out.println("-------------------------------------------------------------------");
 
@@ -32,6 +32,41 @@ public class TestExamples {
             for (WsItem item : searchResults) {
                 total += 1;
                 System.out.println(String.format("%5s: %s (API ID %s)", total, item.getName(), item.getId()));
+            }
+
+            if (searchResults.isEmpty() || searchResults.size() < count) {  // No more search results.
+                System.out.println(String.format("Finished. %s items found.", total));
+                break;
+            } else {
+                start += count;
+            }
+        }
+    }
+
+
+    public void listTestCyclesInPlanExample(ContourSoapService service, WsAuth token) {
+        System.out.println("Jama API list test cycles in a test plan example");
+        System.out.println("List all test cycles in a given test plan");
+        System.out.println("-------------------------------------------------------------------");
+
+        // Get groups in the given test plan. 265 is "CoveragePlus Release" in the project
+        // "Coverage Plus - Traditional".
+        long testPlanId = 265;
+
+        String searchString = String.format("+entityType:testcycle +testPlan.id:%s", testPlanId);
+        int start = 0;
+        int count = 50;
+        int total = 0;
+        List<WsItem> searchResults;
+
+        while (true) {
+            System.out.println(String.format("Getting results %s - %s", start + 1, start + count));
+            searchResults = service.getItemsFromTextSearch(token, searchString, start, count);
+
+            for (WsItem item : searchResults) {
+                total += 1;
+                System.out.println(String.format("%5s: %s (API ID %s)",
+                        total, item.getName(), item.getId()));
             }
 
             if (searchResults.isEmpty() || searchResults.size() < count) {  // No more search results.
